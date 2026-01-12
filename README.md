@@ -1,3 +1,4 @@
+![Clarina Supervisor Banner](banner.jpg)
 # Clarina Supervisor: Safety Evaluation LLM for Mental Health AI
 
 A fine-tuned Large Language Model for automated safety supervision of AI therapy systems. This project implements a clinical evaluation pipeline that assesses AI therapist responses for safety compliance, empathy quality, and risk categorization.
@@ -21,30 +22,30 @@ We developed a **Supervisor Agent** - a fine-tuned LLM that acts as a clinical s
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                        DATA PIPELINE                                     │
+│                        DATA PIPELINE                                    │
 ├─────────────────────────────────────────────────────────────────────────┤
 │  conversations.json         Raw therapy conversations (HuggingFace)     │
-│         │                                                                │
-│         ▼                                                                │
+│         │                                                               │
+│         ▼                                                               │
 │  prepare_smart.py           Context-aware turn extraction               │
-│         │                                                                │
-│         ▼                                                                │
+│         │                                                               │
+│         ▼                                                               │
 │  raw_data_with_context.csv  Patient/Therapist pairs with history        │
-│         │                                                                │
-│         ▼                                                                │
+│         │                                                               │
+│         ▼                                                               │
 │  label_context.py           Teacher model labeling (DeepSeek R1:70b)    │
-│         │                                                                │
-│         ▼                                                                │
+│         │                                                               │
+│         ▼                                                               │
 │  labeled_dataset.csv        Training data with safety/empathy labels    │
 ├─────────────────────────────────────────────────────────────────────────┤
-│                        TRAINING PIPELINE                                 │
+│                        TRAINING PIPELINE                                │
 ├─────────────────────────────────────────────────────────────────────────┤
 │  train_final.py             LoRA fine-tuning on LLaMA-3-8B-Instruct     │
-│         │                                                                │
-│         ▼                                                                │
+│         │                                                               │
+│         ▼                                                               │
 │  clarina-supervisor-adapter/ Trained LoRA weights                       │
 ├─────────────────────────────────────────────────────────────────────────┤
-│                        INFERENCE                                         │
+│                        INFERENCE                                        │
 ├─────────────────────────────────────────────────────────────────────────┤
 │  test_supervisor.py         Validation on adversarial test cases        │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -63,17 +64,35 @@ We developed a **Supervisor Agent** - a fine-tuned LLM that acts as a clinical s
 - Python 3.12+
 - CUDA 12.x
 - Ollama (for teacher model inference)
+- Git LFS (for downloading model weights)
 
 ## Installation
 
-### 1. Clone the Repository
+### 1. Install Git LFS (Required)
+
+The model weights are stored using Git Large File Storage. Install it first:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/clarina-supervisor.git
-cd clarina-supervisor
+# macOS
+brew install git-lfs
+
+# Ubuntu/Debian
+sudo apt-get install git-lfs
+
+# Then initialize
+git lfs install
 ```
 
-### 2. Create Virtual Environment
+### 2. Clone the Repository
+
+```bash
+git clone https://github.com/MichaelKathofer/group-f-therapy-supervisor.git
+cd group-f-therapy-supervisor
+```
+
+> **Note**: Git LFS will automatically download the model weights (~160MB) during clone.
+
+### 3. Create Virtual Environment
 
 ```bash
 python -m venv venv
@@ -82,13 +101,13 @@ source venv/bin/activate  # Linux/macOS
 venv\Scripts\activate     # Windows
 ```
 
-### 3. Install Dependencies
+### 4. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Install Ollama and Teacher Model
+### 5. Install Ollama and Teacher Model (Optional - for retraining)
 
 ```bash
 # Install Ollama (https://ollama.ai)
@@ -188,8 +207,9 @@ For cloud GPU training on RunPod:
 
 ```bash
 # Clone repo and run setup
-git clone https://github.com/YOUR_USERNAME/clarina-supervisor.git
-cd clarina-supervisor
+git lfs install
+git clone https://github.com/MichaelKathofer/group-f-therapy-supervisor.git
+cd group-f-therapy-supervisor
 chmod +x runpod_setup.sh && ./runpod_setup.sh
 ```
 
@@ -286,10 +306,12 @@ The model outputs structured JSON evaluations:
 ## File Structure
 
 ```
-clarina-supervisor/
+group-f-therapy-supervisor/
 ├── README.md                      # This file
+├── paper.md                       # Academic paper (arXiv style)
 ├── requirements.txt               # Python dependencies
 ├── metrics_log.json               # Iteration tracking log
+├── .gitattributes                 # Git LFS tracking config
 │
 ├── conversations.json             # Raw conversation data
 ├── prepare_smart.py               # Data preparation script
@@ -311,16 +333,21 @@ clarina-supervisor/
     └── ...
 ```
 
+## Paper
+
+The academic paper documenting this project is available at:
+- **[paper.md](paper.md)** - Full arXiv-style paper with methodology, results, and references
+
 ## Citation
 
 If you use this work in your research, please cite:
 
 ```bibtex
-@misc{clarina-supervisor-2026,
+@misc{group-f-therapy-supervisor-2026,
   title={Development of a Safety Supervisor LLM using Parameter-Efficient Fine-Tuning},
-  author={Clarina AI Team},
+  author={Slawicek, Paul and Ghobrial, Mario and Ivanic, Marcel and Kathofer, Michael},
   year={2026},
-  howpublished={\url{https://github.com/YOUR_USERNAME/clarina-supervisor}}
+  howpublished={\url{https://github.com/MichaelKathofer/group-f-therapy-supervisor}}
 }
 ```
 
