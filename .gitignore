@@ -1,0 +1,42 @@
+# =============================================================================
+# Clarina Supervisor - Git Ignore
+# =============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv/
+
+# Training outputs (intermediate checkpoints - not needed for inference)
+outputs/
+outputs_*/
+*.gguf
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs (keep metrics_log.json, exclude others)
+*.log
+wandb/
+
+# Large files that can be re-downloaded
+# Note: We DO include the adapter weights (clarina-supervisor-adapter/)
+# because the professor needs them to run the model
+
+# Temporary files
+*.tmp
+*.temp

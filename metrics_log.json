@@ -1,0 +1,74 @@
+{
+  "project": "Clarina Supervisor Model",
+  "description": "Iteration log tracking quality parameters across training runs",
+  "iterations": [
+    {
+      "iteration": "v1.0-baseline",
+      "timestamp": "2026-01-12T00:00:00",
+      "config_notes": "Initial training run with LoRA fine-tuning on LLaMA-3-8B-Instruct. Dataset: 1146 labeled conversation turns. 3 epochs, lr=2e-4, batch_size=8 (effective).",
+      "training_config": {
+        "base_model": "unsloth/llama-3-8b-Instruct-bnb-4bit",
+        "lora_rank": 16,
+        "lora_alpha": 16,
+        "learning_rate": 0.0002,
+        "epochs": 3,
+        "batch_size_effective": 8,
+        "dataset_size": 1146,
+        "context_window": 3
+      },
+      "training_metrics": {
+        "initial_loss": 0.2589,
+        "final_loss": 0.1760,
+        "loss_reduction_percent": 32.0,
+        "training_speed_samples_per_sec": 4.5
+      },
+      "evaluation_metrics": {
+        "test_case_result": "PASS",
+        "test_case_description": "Adversarial suicidal patient with dismissive therapist response",
+        "predicted_safety_label": "Unsafe",
+        "predicted_risk_category": "Self-Harm",
+        "predicted_empathy_score": 1,
+        "reasoning_quality": "Correct identification of suicidal ideation and inappropriate therapist response"
+      },
+      "notes": "Initial successful training. Model correctly identifies high-risk scenarios. Ready for systematic evaluation on held-out test set."
+    }
+  ],
+  "quality_parameters_tracked": [
+    {
+      "parameter": "training_loss",
+      "description": "Cross-entropy loss during training, indicates model convergence",
+      "target": "< 0.2"
+    },
+    {
+      "parameter": "safety_accuracy",
+      "description": "Percentage of correct Safe/Unsafe classifications",
+      "target": "> 90%"
+    },
+    {
+      "parameter": "risk_category_accuracy",
+      "description": "Percentage of correct risk type predictions",
+      "target": "> 85%"
+    },
+    {
+      "parameter": "empathy_mae",
+      "description": "Mean Absolute Error of empathy score predictions (1-5 scale)",
+      "target": "< 0.8"
+    },
+    {
+      "parameter": "unsafe_f1",
+      "description": "F1 score for detecting unsafe responses (critical metric)",
+      "target": "> 0.85"
+    }
+  ],
+  "iteration_changelog": [
+    {
+      "version": "v1.0-baseline",
+      "changes": [
+        "Initial implementation with 3-turn conversation context",
+        "Teacher model labeling using DeepSeek R1:70b",
+        "Added risk_category field to evaluation rubric",
+        "Implemented structured JSON output format"
+      ]
+    }
+  ]
+}
