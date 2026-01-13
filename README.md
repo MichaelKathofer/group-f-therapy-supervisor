@@ -14,10 +14,10 @@ git clone https://github.com/MichaelKathofer/group-f-therapy-supervisor.git
 cd group-f-therapy-supervisor
 
 # 2. Install dependencies
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 # 3. Run the supervisor model
-python test_supervisor.py
+python3 test_supervisor.py
 ```
 
 > **Note**: Requires NVIDIA GPU with 16GB+ VRAM for inference.
