@@ -3,6 +3,27 @@
 
 A fine-tuned Large Language Model for automated safety supervision of AI therapy systems. This project implements a clinical evaluation pipeline that assesses AI therapist responses for safety compliance, empathy quality, and risk categorization.
 
+---
+
+## Quick Start (git clone → run)
+
+```bash
+# 1. Install Git LFS and clone the repository
+git lfs install
+git clone https://github.com/MichaelKathofer/group-f-therapy-supervisor.git
+cd group-f-therapy-supervisor
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run the supervisor model
+python test_supervisor.py
+```
+
+> **Note**: Requires NVIDIA GPU with 16GB+ VRAM for inference.
+
+---
+
 ## Project Overview
 
 ### Problem Statement
@@ -117,17 +138,9 @@ curl -fsSL https://ollama.ai/install.sh | sh
 ollama pull deepseek-r1:70b
 ```
 
-## Usage
+## Usage (Training from Scratch)
 
-### Quick Start (Inference Only)
-
-If you just want to test the pre-trained model:
-
-```bash
-python test_supervisor.py
-```
-
-### Full Pipeline (Training from Scratch)
+For those who want to retrain the model or understand the full pipeline:
 
 #### Step 1: Prepare Data
 
