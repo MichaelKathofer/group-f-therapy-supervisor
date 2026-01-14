@@ -5,7 +5,15 @@ A fine-tuned Large Language Model for automated safety supervision of AI therapy
 
 ---
 
-## Quick Start (git clone → run)
+## Quick Start
+
+### Option A: Run in Google Colab (No GPU Required!)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MichaelKathofer/group-f-therapy-supervisor/blob/main/train_colab.ipynb)
+
+Click the badge above to train and test the model using free GPU in Google Colab.
+
+### Option B: Run Locally (Requires NVIDIA GPU)
 
 ```bash
 # 1. Install Git LFS and clone the repository
@@ -20,7 +28,7 @@ pip3 install -r requirements.txt
 python3 test_supervisor.py
 ```
 
-> **Note**: Requires NVIDIA GPU with 16GB+ VRAM for inference.
+> **Note**: Local inference requires NVIDIA GPU with 16GB+ VRAM.
 
 ---
 
