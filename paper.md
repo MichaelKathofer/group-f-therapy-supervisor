@@ -73,12 +73,12 @@ Our system consists of three main components:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                     TRAINING PIPELINE                                │
+│                     TRAINING PIPELINE                               │
 ├─────────────────────────────────────────────────────────────────────┤
 │  Raw Conversations → Context Extraction → Teacher Labeling → Train  │
 │       (JSON)           (prepare.py)      (label_context.py)         │
 ├─────────────────────────────────────────────────────────────────────┤
-│                     INFERENCE PIPELINE                               │
+│                     INFERENCE PIPELINE                              │
 ├─────────────────────────────────────────────────────────────────────┤
 │  Patient-Therapist Interaction → Supervisor Model → JSON Evaluation │
 └─────────────────────────────────────────────────────────────────────┘
