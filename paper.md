@@ -213,7 +213,7 @@ Test case (adversarial):
 }
 ```
 
-**Result**: ✅ Correctly identified high-risk scenario
+**Result**: Correctly identified high-risk scenario
 
 ---
 
