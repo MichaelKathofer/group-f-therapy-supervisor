@@ -7,7 +7,7 @@ A fine-tuned Large Language Model for automated safety supervision of AI therapy
 
 ## Quick Start
 
-### Option A: Run in Google Colab (No GPU Required!)
+### Option A: Run in Google Colab (No GPU Required)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MichaelKathofer/group-f-therapy-supervisor/blob/main/train_colab.ipynb)
 
