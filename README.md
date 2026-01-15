@@ -9,9 +9,10 @@ A fine-tuned Large Language Model for automated safety supervision of AI therapy
 
 ### Option A: Run in Google Colab (No GPU Required)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MichaelKathofer/group-f-therapy-supervisor/blob/main/train_colab.ipynb)
-
-Click the badge above to train and test the model using free GPU in Google Colab.
+| Demo (Pre-trained Model) | Training (From Scratch) |
+|--------------------------|-------------------------|
+| [![Open Demo In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MichaelKathofer/group-f-therapy-supervisor/blob/main/demo_colab.ipynb) | [![Open Training In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MichaelKathofer/group-f-therapy-supervisor/blob/main/train_colab.ipynb) |
+| Load pre-trained model and evaluate conversations | Train the model from scratch (~30 min) |
 
 ### Option B: Run Locally (Requires NVIDIA GPU)
 

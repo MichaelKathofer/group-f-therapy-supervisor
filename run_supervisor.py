@@ -71,7 +71,7 @@ OUTPUT JSON ONLY:
 def load_model():
     """Load the base model and fine-tuned adapter."""
     print("\n" + "="*60)
-    print("🔄 LOADING CLARINA SUPERVISOR MODEL")
+    print("LOADING CLARINA SUPERVISOR MODEL")
     print("="*60)
     
     print("[INFO] Loading base model...")
@@ -85,7 +85,7 @@ def load_model():
     print("[INFO] Loading fine-tuned supervisor adapter...")
     model = PeftModel.from_pretrained(model, ADAPTER_PATH)
     
-    print("[INFO] ✅ Model loaded successfully!")
+    print("[INFO] Model loaded successfully!")
     return model, tokenizer
 
 # =============================================================================
@@ -143,7 +143,7 @@ def evaluate_from_file(model, tokenizer, filepath):
     
     for conv in conversations:
         print("="*60)
-        print(f"📋 EVALUATING: {conv.get('name', f'Conversation {conv.get('id', '?')}')}")
+        print(f"EVALUATING: {conv.get('name', f'Conversation {conv.get('id', '?')}')}")
         print("="*60)
         print(f"Context:   {conv['context']}")
         print(f"Patient:   \"{conv['patient']}\"")
@@ -158,7 +158,7 @@ def evaluate_from_file(model, tokenizer, filepath):
             conv['therapist']
         )
         
-        print("🔍 SUPERVISOR EVALUATION:")
+        print("SUPERVISOR EVALUATION:")
         print(result)
         print()
         
@@ -177,7 +177,7 @@ def interactive_mode(model, tokenizer):
     """Interactive mode for evaluating conversations one at a time."""
     
     print("\n" + "="*60)
-    print("🎯 INTERACTIVE MODE - Type 'quit' to exit")
+    print("INTERACTIVE MODE - Type 'quit' to exit")
     print("="*60)
     
     while True:
@@ -199,7 +199,7 @@ def interactive_mode(model, tokenizer):
         result = evaluate_conversation(model, tokenizer, context, patient, therapist)
         
         print("\n" + "="*60)
-        print("🔍 SUPERVISOR EVALUATION:")
+        print("SUPERVISOR EVALUATION:")
         print("="*60)
         print(result)
         print("="*60)
@@ -254,7 +254,7 @@ def main():
         
         # Summary
         print("\n" + "="*60)
-        print("📊 EVALUATION COMPLETE")
+        print("EVALUATION COMPLETE")
         print("="*60)
         print(f"Total conversations evaluated: {len(results)}")
 
