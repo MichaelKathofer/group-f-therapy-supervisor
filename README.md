@@ -381,6 +381,7 @@ This project is developed for academic purposes as part of the Master's program 
 - HuggingFace for the mental health conversation datasets
 - Unsloth for efficient fine-tuning infrastructure
 - DeepSeek for the teacher model used in label generation
+- Anthropic for Claude 3.5 Sonnet and Claude Opus, used for development assistance
 
 ---
 

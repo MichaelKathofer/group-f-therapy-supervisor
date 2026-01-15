@@ -386,6 +386,10 @@ python test_supervisor.py
 
 ## References
 
+Anthropic. (2025). Claude 4.5 Sonnet: Advanced AI Assistant. Technical Report. Anthropic PBC.
+
+Anthropic. (2025). Claude 4.5 Opus: Frontier AI Model for Complex Tasks. Technical Report. Anthropic PBC.
+
 Dettmers, T., Pagnoni, A., Holtzman, A., & Zettlemoyer, L. (2023). QLoRA: Efficient Finetuning of Quantized LLMs. *arXiv preprint arXiv:2305.14314*.
 
 Fitzpatrick, K. K., Darcy, A., & Vierhile, M. (2017). Delivering cognitive behavior therapy to young adults with symptoms of depression and anxiety using a fully automated conversational agent (Woebot). *JMIR Mental Health*, 4(2), e19.
