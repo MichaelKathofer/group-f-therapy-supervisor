@@ -1,5 +1,5 @@
 ![Clarina Supervisor Banner](banner.jpg)
-# Clarina Supervisor: Safety Evaluation LLM for Mental Health AI
+# AI Supervisor: Safety Evaluation LLM for Mental Health AI
 
 A fine-tuned Large Language Model for automated safety supervision of AI therapy systems. This project implements a clinical evaluation pipeline that assesses AI therapist responses for safety compliance, empathy quality, and risk categorization.
 
@@ -31,6 +31,11 @@ python3 test_supervisor.py
 > **Note**: Local inference requires NVIDIA GPU with 16GB+ VRAM.
 
 ---
+
+## Paper
+
+The academic paper documenting this project is available at:
+- **[paper.md](paper.md)** - Full arXiv-style paper with methodology, results, and references
 
 ## Project Overview
 
@@ -354,11 +359,6 @@ group-f-therapy-supervisor/
     └── ...
 ```
 
-## Paper
-
-The academic paper documenting this project is available at:
-- **[paper.md](paper.md)** - Full arXiv-style paper with methodology, results, and references
-
 ## Citation
 
 If you use this work in your research, please cite:
@@ -381,7 +381,7 @@ This project is developed for academic purposes as part of the Master's program 
 - HuggingFace for the mental health conversation datasets
 - Unsloth for efficient fine-tuning infrastructure
 - DeepSeek for the teacher model used in label generation
-- Anthropic for Claude 3.5 Sonnet and Claude Opus, used for development assistance
+- Anthropic for Claude 4.5 Sonnet and Claude Opus, used for development assistance
 
 ---
 
