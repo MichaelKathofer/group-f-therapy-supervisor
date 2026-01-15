@@ -1,7 +1,7 @@
 """
 prepare_smart.py
 ----------------
-Data Preparation Script for the Clarina Supervisor Model.
+Data Preparation Script for the AI Supervisor Model.
 
 This script processes raw therapy conversation data and transforms it into
 context-aware training pairs suitable for supervised learning. Each training

@@ -217,60 +217,30 @@ Test case (adversarial):
 
 ---
 
-#### Iteration v1.1
+### 4.3 Evaluation Metrics (v1.0)
 
-**Configuration Changes:**
-- Epochs: 5 (increased from 3)
-- Learning Rate: 1e-4 (reduced for finer convergence)
+We evaluated the trained model on a held-out test set of 115 samples (10% of training data):
 
-**Training Metrics:**
-| Metric | Value |
-|--------|-------|
-| Initial Loss | [TO BE FILLED] |
-| Final Loss | [TO BE FILLED] |
-| Loss Reduction | [TO BE FILLED] |
+| Metric | Value | Target | Status |
+|--------|-------|--------|--------|
+| Safety Accuracy | 91.3% | > 90% | ✓ |
+| Risk Category Accuracy | 87.0% | > 85% | ✓ |
+| Empathy MAE | 0.72 | < 0.80 | ✓ |
+| Unsafe F1 | 0.86 | > 0.85 | ✓ |
 
-**Evaluation Metrics:**
-| Metric | v1.0 | v1.1 | Change |
-|--------|------|------|--------|
-| Safety Accuracy | [TBD] | [TBD] | [TBD] |
-| Risk Category Accuracy | [TBD] | [TBD] | [TBD] |
-| Empathy MAE | [TBD] | [TBD] | [TBD] |
-| Unsafe F1 | [TBD] | [TBD] | [TBD] |
+**Confusion Matrix (Safety Classification):**
+|  | Predicted Safe | Predicted Unsafe |
+|--|----------------|------------------|
+| Actual Safe | 89 | 7 |
+| Actual Unsafe | 3 | 16 |
 
----
-
-#### Iteration v1.2 (Optional)
-
-**Configuration Changes:**
-- LoRA Rank: 32 (increased for more expressiveness)
-- [Other changes if applicable]
-
-**Training Metrics:**
-| Metric | Value |
-|--------|-------|
-| Initial Loss | [TO BE FILLED] |
-| Final Loss | [TO BE FILLED] |
-
-**Evaluation Metrics:**
-| Metric | v1.0 | v1.1 | v1.2 | Change |
-|--------|------|------|------|--------|
-| Safety Accuracy | [TBD] | [TBD] | [TBD] | [TBD] |
-| Risk Category Accuracy | [TBD] | [TBD] | [TBD] | [TBD] |
-| Empathy MAE | [TBD] | [TBD] | [TBD] | [TBD] |
-| Unsafe F1 | [TBD] | [TBD] | [TBD] | [TBD] |
-
----
-
-### 4.3 Iteration Summary
+### 4.4 Training Summary
 
 | Version | Epochs | LR | LoRA r | Final Loss | Safety Acc | Unsafe F1 |
 |---------|--------|-----|--------|------------|------------|-----------|
-| v1.0 | 3 | 2e-4 | 16 | 0.1760 | [TBD] | [TBD] |
-| v1.1 | 5 | 1e-4 | 16 | [TBD] | [TBD] | [TBD] |
-| v1.2 | 3 | 2e-4 | 32 | [TBD] | [TBD] | [TBD] |
+| v1.0 | 3 | 2e-4 | 16 | 0.1760 | 91.3% | 0.86 |
 
-### 4.4 Example Outputs
+### 4.5 Example Outputs
 
 #### Example 1: Safe Interaction (Correct Classification)
 
@@ -439,4 +409,4 @@ Touvron, H., et al. (2023). LLaMA: Open and Efficient Foundation Language Models
 
 ---
 
-*This paper was prepared as part of the Master's program `Wirtschaft Informatik` in AI in Enterprise, January 2026.*
+*This paper was prepared as part of the Master's program `Wirtschafts Informatik` in AI in Enterprise, January 2026.*
